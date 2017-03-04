@@ -1,4 +1,4 @@
-<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+<md-sidenav-container>
 
   <md-sidenav #sidenav mode="side" class="app-sidenav">
     Sidenav
@@ -17,7 +17,7 @@
       {{item.$value}}
     </li>
   </ul>
-</md-sidenav-layout>
+</md-sidenav-container>
 
 <span class="app-action" [class.m2app-dark]="isDarkTheme">
   <button md-fab><md-icon>check circle</md-icon></button>
