@@ -21,7 +21,3 @@ body {
 .white-text {
     color: #FFF!important;
 }
-
-.app-toolbar-filler {
-  flex: 1 1 auto;
-}

@@ -9,8 +9,10 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class AppComponent {
   items: FirebaseListObservable<any[]>;
+  title: string;
 
   constructor(public af: AngularFire) {
+    this.title = 'Part - Ways';
     this.items = af.database.list('/items');
   }
 
@@ -19,7 +21,7 @@ export class AppComponent {
   }
 
   logout() {
-     this.af.auth.logout();
+    this.af.auth.logout();
   }
 
 }

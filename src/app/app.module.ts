@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
@@ -25,6 +26,7 @@ const firebaseAuthConfig = {
   imports: [
     BrowserModule,
     MaterialModule.forRoot(),
+    FlexLayoutModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
   ],
   declarations: [AppComponent],

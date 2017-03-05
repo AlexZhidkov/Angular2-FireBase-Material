@@ -1,12 +1,12 @@
 <md-sidenav-container fullscreen>
   <md-sidenav #sidenav mode="side">
     <md-toolbar>
-      <span>First Row</span>
+      <button md-menu-item routerLink="/products">Products 1</button>
       <md-toolbar-row>
-        <span>Second Row</span>
+        <button md-menu-item routerLink="/products">Products 2</button>
       </md-toolbar-row>
       <md-toolbar-row>
-        <button md-button ng-show="af.auth" (click)="logout()">Logout</button>
+        <button md-menu-item (click)="logout()">Logout</button>
       </md-toolbar-row>
     </md-toolbar>
   </md-sidenav>
@@ -15,11 +15,11 @@
     <button md-button (click)="sidenav.toggle()">
       <md-icon>menu</md-icon>
     </button>
-
-    <span>
-    Angular Material2 Example App
-    </span>
-    <span class="app-toolbar-filler"></span>
+    <button md-button routerLink="/">
+      <md-icon>home</md-icon> 
+      {{title}}
+    </button>
+    <span class="fill-remaining-space"></span>
     <button md-icon-button [mdMenuTriggerFor]="menu">Login</button>
   </md-toolbar>
 
@@ -30,9 +30,9 @@
   </ul>
   <div> {{ (af.auth | async)?.uid }} </div>
 
-  <span class="app-action" [class.m2app-dark]="isDarkTheme">
-  <button md-fab><md-icon>check circle</md-icon></button>
-</span>
+  <div fxLayout="row" fxLayoutAlign="end end">
+    <button md-fab><md-icon>add</md-icon></button>
+  </div>
 </md-sidenav-container>
 
 <md-menu #menu="mdMenu">
