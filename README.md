@@ -1,4 +1,8 @@
 https://github.com/jelbourn/material2-app
+https://coryrylan.com/blog/deploy-angular-cli-apps-to-firebase
+https://material.angular.io/
+https://material.io/icons/
+https://tburleson-layouts-demos.firebaseapp.com
 
 # PartWays
 
@@ -28,6 +32,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
+
+## Deploying to Firebase
+ng build --prod
+firebase deploy
 
 ## Further help
 
