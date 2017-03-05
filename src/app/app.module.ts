@@ -1,8 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { AngularFireModule } from 'angularfire2';
 import { MaterialModule } from '@angular/material';
+import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule, AuthMethods, AuthProviders } from 'angularfire2';
+
+import 'hammerjs';
+
+import { AppComponent } from './app.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -10,16 +13,22 @@ export const firebaseConfig = {
   authDomain: 'partways-dev.firebaseapp.com',
   databaseURL: 'https://partways-dev.firebaseio.com',
   storageBucket: 'partways-dev.appspot.com',
-  messagingSenderId: '1727367456'
+  messagingSenderId: '1727367456',
+};
+
+const firebaseAuthConfig = {
+  provider: AuthProviders.Google,
+  method: AuthMethods.Redirect,
 };
 
 @NgModule({
   imports: [
     BrowserModule,
-    MaterialModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    MaterialModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
   ],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
+
 export class AppModule { }

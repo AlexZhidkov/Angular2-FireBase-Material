@@ -1,15 +1,26 @@
-<md-sidenav-container>
-
-  <md-sidenav #sidenav mode="side" class="app-sidenav">
-    Sidenav
+<md-sidenav-container fullscreen>
+  <md-sidenav #sidenav mode="side">
+    <md-toolbar>
+      <span>First Row</span>
+      <md-toolbar-row>
+        <span>Second Row</span>
+      </md-toolbar-row>
+      <md-toolbar-row>
+        <button md-button ng-show="af.auth" (click)="logout()">Logout</button>
+      </md-toolbar-row>
+    </md-toolbar>
   </md-sidenav>
-  <md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
-    </button> Angular Material2 Example App
 
+  <md-toolbar color="primary">
+    <button md-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+
+    <span>
+    Angular Material2 Example App
+    </span>
     <span class="app-toolbar-filler"></span>
-    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+    <button md-icon-button [mdMenuTriggerFor]="menu">Login</button>
   </md-toolbar>
 
   <ul>
@@ -17,8 +28,24 @@
       {{item.$value}}
     </li>
   </ul>
-</md-sidenav-container>
+  <div> {{ (af.auth | async)?.uid }} </div>
 
-<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <span class="app-action" [class.m2app-dark]="isDarkTheme">
   <button md-fab><md-icon>check circle</md-icon></button>
 </span>
+</md-sidenav-container>
+
+<md-menu #menu="mdMenu">
+  <button md-menu-item (click)="login()">
+      <i class="fa fa-google" aria-hidden="true"></i> 
+      <span>Login with Google</span>
+   </button>
+  <button md-menu-item disabled>
+      <md-icon>voicemail</md-icon>
+      <span>Login with Facebook</span>
+   </button>
+  <button md-menu-item disabled>
+      <md-icon>notifications_off</md-icon>
+      <span>Login with Microsoft</span>
+   </button>
+</md-menu>
