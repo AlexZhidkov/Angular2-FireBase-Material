@@ -4,7 +4,7 @@ https://material.angular.io/
 https://material.io/icons/
 https://tburleson-layouts-demos.firebaseapp.com
 
-# PartWays
+# Angular2, AngularFire2, AngularMaterial2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
 
